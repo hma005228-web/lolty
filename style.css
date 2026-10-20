@@ -1,0 +1,115 @@
+:root{
+  --bg1:#1a0612; --bg2:#3a0a24; --rose:#ff4d79; --rose2:#ff8fab; --gold:#f5d38a; --ink:#fff1f4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:#12040c;color:var(--ink);font-family:'Cairo',system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:radial-gradient(120% 90% at 50% 0%,var(--bg2) 0%,var(--bg1) 60%,#0d0309 100%) fixed;overflow-x:hidden}
+.page{display:none;min-height:100vh;min-height:100dvh;width:100%;position:relative;z-index:2}
+.page.active{display:flex}
+
+/* ---------- PAGE 1 ---------- */
+#p1{align-items:center;justify-content:center;flex-direction:column;gap:46px;text-align:center;padding:24px}
+#p1 h1{
+  font-family:'Amiri',serif;font-weight:700;font-size:clamp(64px,18vw,140px);line-height:1.1;
+  background:linear-gradient(180deg,#fff 0%,var(--rose2) 55%,var(--rose) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 22px rgba(255,77,121,.45));
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{50%{transform:translateY(-10px)}}
+.btn{
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:20px;color:#fff;border:0;cursor:pointer;
+  padding:16px 44px;border-radius:999px;
+  background:linear-gradient(135deg,var(--rose),#c2185b);
+  box-shadow:0 0 0 0 rgba(255,77,121,.6),0 10px 30px rgba(194,24,91,.45);
+  animation:pulse 2s infinite;transition:transform .2s;
+}
+.btn:active{transform:scale(.94)}
+@keyframes pulse{70%{box-shadow:0 0 0 22px rgba(255,77,121,0),0 10px 30px rgba(194,24,91,.45)}100%{box-shadow:0 0 0 0 rgba(255,77,121,0),0 10px 30px rgba(194,24,91,.45)}}
+.sparkle{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:.0;animation:tw 3s infinite}
+@keyframes tw{50%{opacity:.9}}
+
+/* ---------- SHUTTER (mechanical transition) ---------- */
+#shutter{position:fixed;inset:0;z-index:100;pointer-events:none;display:none}
+#shutter.show{display:block;pointer-events:all}
+.slat{
+  position:absolute;top:0;bottom:0;width:calc(100%/8 + 1px);
+  background:
+    radial-gradient(circle at 50% 14px,#6b6b76 0 3px,transparent 4px),
+    radial-gradient(circle at 50% calc(100% - 14px),#6b6b76 0 3px,transparent 4px),
+    linear-gradient(90deg,#1b1b22,#3a3a46 45%,#23232b 55%,#121217);
+  border-left:1px solid #000;border-right:1px solid #555;
+  transform:translateY(-101%);
+  transition:transform .55s cubic-bezier(.7,0,.2,1);
+}
+#shutter.closed .slat{transform:translateY(0)}
+#shutter.opening .slat{transform:translateY(101%)}
+#shutter .stage{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
+  opacity:0;transition:opacity .4s;
+}
+#shutter.closed .stage{opacity:1}
+#shutter.opening .stage{opacity:0}
+.gears{position:relative;width:190px;height:120px;direction:ltr}
+.gear{position:absolute;color:var(--gold);filter:drop-shadow(0 0 8px rgba(245,211,138,.5))}
+.gear.a{left:0;top:10px;width:100px;height:100px;animation:spin 3s linear infinite}
+.gear.b{left:80px;top:0;width:76px;height:76px;animation:spin 2.25s linear infinite reverse}
+.gear.c{left:120px;top:56px;width:60px;height:60px;animation:spin 1.8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#shutterMsg{
+  font-family:'Amiri',serif;font-weight:700;font-size:clamp(26px,7vw,46px);color:#fff;text-align:center;padding:0 24px;min-height:1.6em;
+  text-shadow:0 0 18px rgba(255,77,121,.7);
+}
+#shutterMsg::after{content:"▍";color:var(--rose);animation:blink .7s steps(1) infinite;margin-right:2px}
+@keyframes blink{50%{opacity:0}}
+
+/* ---------- HEARTS ---------- */
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.heart{position:absolute;top:-8vh;animation:fall linear forwards;will-change:transform}
+@keyframes fall{
+  0%{transform:translate3d(0,0,0) rotate(0);opacity:0}
+  8%{opacity:.9}
+  100%{transform:translate3d(var(--dx),115vh,0) rotate(var(--rot));opacity:.2}
+}
+
+/* ---------- PAGE 3 (LETTER) ---------- */
+#p3{flex-direction:column;align-items:center;padding:56px 20px 140px}
+.paper{
+  width:100%;max-width:720px;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+  border:1px solid rgba(255,143,171,.25);border-radius:26px;padding:36px 28px;
+  backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.45),inset 0 0 40px rgba(255,77,121,.05);
+}
+.paper p{font-family:'Amiri',serif;font-size:clamp(20px,4.6vw,25px);line-height:2.15;margin-bottom:26px;color:#ffe9ef}
+.paper p.poem{
+  text-align:center;color:var(--gold);font-style:italic;line-height:2.2;
+  border-top:1px solid rgba(245,211,138,.3);border-bottom:1px solid rgba(245,211,138,.3);padding:18px 6px;margin:34px 0;
+}
+.paper p.poem .ln{display:block}
+.w{opacity:0;filter:blur(6px);transition:opacity .6s,filter .6s;display:inline}
+.w.on{opacity:1;filter:none}
+#skip{position:fixed;top:14px;left:14px;z-index:20;background:rgba(0,0,0,.35);color:#ffd0dc;border:1px solid rgba(255,143,171,.4);border-radius:999px;padding:7px 16px;font-family:'Cairo';font-size:14px;cursor:pointer}
+.bottom{margin-top:30px;opacity:0;transform:translateY(20px);transition:all 1s;text-align:center;width:100%}
+.bottom.show{opacity:1;transform:none}
+
+/* ---------- PAGE 4 (POEMS) ---------- */
+#p4{flex-direction:column;align-items:center;padding:60px 20px 90px;gap:34px}
+#p4 .head{font-family:'Amiri',serif;font-size:clamp(34px,9vw,60px);color:var(--gold);text-align:center;text-shadow:0 0 24px rgba(245,211,138,.4)}
+#p4 .orn{color:var(--rose2);letter-spacing:12px;margin-top:-18px}
+.poem-card{
+  width:100%;max-width:560px;text-align:center;position:relative;
+  padding:34px 22px 30px;border-radius:24px;
+  background:linear-gradient(160deg,rgba(255,77,121,.13),rgba(255,255,255,.04));
+  border:1px solid rgba(245,211,138,.28);
+  box-shadow:0 14px 40px rgba(0,0,0,.4);
+  opacity:0;transform:translateY(40px) scale(.97);transition:all 1s cubic-bezier(.2,.7,.2,1);
+}
+.poem-card.in{opacity:1;transform:none}
+.poem-card::before,.poem-card::after{
+  content:"❦";position:absolute;color:var(--gold);opacity:.7;font-size:22px;left:50%;transform:translateX(-50%);background:#2a0a1a;padding:0 10px;
+}
+.poem-card::before{top:-15px}.poem-card::after{bottom:-15px;content:"✦"}
+.poem-card .ln{font-family:'Amiri',serif;font-size:clamp(21px,5vw,27px);line-height:2.2;color:#fff1f4}
+.poem-card .ln:nth-child(2n){color:var(--rose2)}
+.poem-card .em{margin-top:10px;font-size:24px}
+.end{font-family:'Amiri',serif;font-size:28px;color:var(--rose2);text-align:center;margin-top:10px}

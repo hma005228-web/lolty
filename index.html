@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اسمع بقا ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<!-- PAGE 1 -->
+<section class="page active" id="p1">
+  <h1>بصي بقا</h1>
+  <button class="btn" id="go1">دوسي هنا ❤️</button>
+</section>
+
+<!-- PAGE 3: LETTER -->
+<section class="page" id="p3">
+  <button id="skip">تخطي ⏭</button>
+  <div class="paper" id="letter"></div>
+  <div class="bottom" id="bottom1"><button class="btn" id="go2">كمّلي 🌹</button></div>
+</section>
+
+<!-- PAGE 4: POEMS -->
+<section class="page" id="p4">
+  <div class="head">كلمتين من القلب</div>
+  <div class="orn">❤ ❤ ❤</div>
+  <div id="poems" style="width:100%;display:flex;flex-direction:column;align-items:center;gap:40px"></div>
+  <div class="end">بحبك يا لولتي ❤️</div>
+</section>
+
+<!-- MECHANICAL TRANSITION -->
+<div id="shutter">
+  <div id="slats"></div>
+  <div class="stage">
+    <div class="gears">
+      <svg class="gear a" viewBox="0 0 100 100"><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="9.4 9.4"/><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="8" fill="currentColor"/></svg>
+      <svg class="gear b" viewBox="0 0 100 100"><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="9.4 9.4"/><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="8" fill="currentColor"/></svg>
+      <svg class="gear c" viewBox="0 0 100 100"><circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="14" stroke-dasharray="9.4 9.4"/><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="50" cy="50" r="8" fill="currentColor"/></svg>
+    </div>
+    <div id="shutterMsg"></div>
+  </div>
+</div>
+
+<script>
+/* ================= DATA ================= */
+const LETTER = [
+"بصي يا لولتي يا روح قلبي ويا حتة مني بحبك اوي والله بحبك اكتر ما انتي متخيله واكتر من اي كلام ممكن اقولهولك ومهما اتكلمت ومهما حاولت اوصفلك اللي جوايا مش هعرف اديكي حقك ولا اوصفلك انتي بالنسبالي ايه بجد انتي مش مجرد واحده بحبها انتي بقيتي جزء مني ومن يومي ومن تفكيري ومن كل حاجه حلوه في حياتي انتي اول حد بييجي في بالي لما اصحى واخر حد بفكر فيه قبل ما انام وانتي اللي مجرد ما اشوف رساله منك بلاقي نفسي ببتسم من غير ما احس وانتي اللي صوتك وكلامك بيخلوني انسى اي حاجه مضايقاني في الدنيا كلها يا لولتي 😍❤️🥹",
+"عايزك تبقي عارفه حاجه واحده بس ومهما حصل ومهما الدنيا اتغيرت ومهما قابلتنا مشاكل او ظروف صعبه انا هفضل معاكي عشان انا بحبك يا روحي ومش حبي ليكي حاجه سهله تتغير ولا حاجه بتتقال وخلاص انا بحبك بجد وبكل اللي فيا ومش عايز من الدنيا غير اني اشوفك مبسوطه وضحكتك منوره وشك وقلبك مرتاح ومفيش حاجه مزعلاكي انتي اغلى حاجه عندي والله ويمكن انا ساعات معرفش اعبر او معرفش اقول الكلام اللي انتي محتاجه تسمعيه مني بس ده عمره ما معناه ان حبي ليكي قليل بالعكس ده انتي جوايا في حته الكلام نفسه مش عارف يوصلها 🥹❤️❣️",
+"يا لولتي يا حبيبتي يا اجمل حاجه حصلتلي في حياتي اوعي في يوم تزعلي وتفتكري انك لوحدك او ان مفيش حد حاسس بيكي انا معاكي يا روحي وهفضل جنبك على قد ما اقدر وهسمعك لما تحبي تتكلمي وهحاول افهمك حتى لو مش عارفه تعبري عن اللي جواكي وهطمنك لما تخافي وهحاول اخليكي تضحكي لما الدنيا تضيق بيكي ومش هقولك ان حياتنا هتبقى كلها ورد ومفيش مشاكل لا اكيد هيبقى فيه ايام صعبه واوقات ممكن نزعل فيها من بعض بس اللي انا عايزه اوصلهولك اني مش عايز اول مشكله تبقى سبب نبعد بيه عن بعض انا عايزنا نفضل نختار بعض كل مره ونفهم بعض ونصالح بعض ونعدي اي حاجه بايدينا طول ما احنا متمسكين ببعض يا عمر قلبي 😍❤️",
+"عارفه يا لولتي ساعات بقعد افكر ازاي شخص واحد ممكن يبقى فارق معايا بالشكل ده ازاي ممكن ضحكته تفرق في يومي وزعله يزعلني وكلمه منه تفرحني من قلبي كده وبعدين الاقي الاجابه بسيطه اوي عشان انتي انتي يا روحي عشان قلبي اختارك وارتاحلك وعشان بقيتي بالنسبالي مش مجرد حب وخلاص انتي بقيتي الامان اللي بحب ارجعله والضحكه اللي بتفرحني والونس اللي بيهون عليا الدنيا وانا بجد مش عايز اخسر الحاجه الحلوه دي ابدا انتي بالنسبالي حاجه غاليه اوي ومش عايز اشوف في عينيكي دموع غير دموع الفرح يا حبيبتي 💋🫠",
+"ولو هكتبلك شعر عن اللي جوايا مش هعرف اكتب قصيده تكفيكي بس هقولك كام كلمه من قلبي",
+{poem:[
+"يا لولتي يا نور عيني يا ضحكة وسط السنين",
+"يا اجمل قدر جالي ويا حب ساكن في قلبي ومش بيهون",
+"لو الدنيا يوم ضاقت عليكي هبقى ليكي حضن وامان",
+"ولو كل الناس بعدت عنك هفضل ادعيلك واطمن عليكي كمان",
+"انتي مش بس حبي انتي حتة من روحي وحياتي",
+"وانتي اجمل حاجه في عمري واجمل نصيب في حكاياتي",
+"ولو خيروني بين الدنيا وبين لحظه اشوف فيها عينيكي",
+"هختار اللحظه اللي فيها اكون قريب منك واشوف ضحكتك واراضيكي ❤️🥹😍"]},
+"يا بنتي انتي متعرفيش انا بحب دلعك قد ايه ولا بحب لما اكلمك واحس اني بكلم حد قريب مني اوي كده ولا قد ايه بحب التفاصيل الصغيره اللي فيكي حتى الحاجات اللي انتي ممكن متاخديش بالك منها انا باخد بالي منها وبحبها عشان هي منك انتي يا لولتي حتى زعلك بيبقى على قلبي صعب ومبعرفش ابقى كويس وانا عارف انك مضايقه ونفسي دايما اكون الشخص اللي لما يحصل معاكي اي حاجه تحبي تيجي تحكيله من غير خوف ولا تردد وتبقي عارفه انك مش محتاجه تمثلي انك كويسه قدامي ولا تخبي تعبك عني عشان انا عايزك تبقي على طبيعتك معايا في فرحك وزعلك وفي كل حالاتك يا حبيبتي ❣️❤️",
+"ومهما قلتلك بحبك هفضل حاسس ان الكلمه دي صغيره على اللي جوايا ومهما حاولت اثبتلك حبي هفضل عايز اعمل اكتر عشان اشوفك مبسوطه وعشان تبقي متأكده انك مش شخص عادي في حياتي انتي حد انا بتمناه يفضل موجود فيها وعايز اعيش معاه تفاصيل كتير حلوه وافتكر معاه ايام تضحكنا بعد سنين ونبص لبعض ونقول فاكره لما كنا بنقول لبعض الكلام ده ونضحك يا روحي انا نفسي نبقى لبعض راحه مش تعب وامان مش خوف وسبب في ضحكه بعض مش سبب في دموع بعض وانا من ناحيتي هحاول على قد ما اقدر اخليكي تحسي بحبي ليكي مش بس من كلامي لكن من معاملتي واهتمامي بيكي ووقوفي جنبك 😍💋",
+"يا لولتي لو في يوم لقيتي نفسك مضايقه مني قوليلي ولو في حاجه وجعتك مني فهميني ولو حاسه اني مقصر معاكي اتكلمي معايا انا مش عايزك تفضلي شايله جواكي حاجه وتزعلي لوحدك انا عايزنا نبقى واضحين مع بعض ونفهم بعض ونبقى حنينين على بعض عشان انتي غاليه عليا اوي ومش عايز الزعل ياخد مننا لحظه حلوه نقدر نعيشها سوا وعايزك دايما تفتكري ان مفيش حد كامل وانا كمان مش كامل وممكن اغلط من غير ما اقصد بس عمري ما هعتبر زعلك حاجه بسيطه ولا مشاعرك حاجه ملهاش قيمه عندي بالعكس انا عايز اتعلم ازاي احبك بالطريقه اللي تريح قلبك وتخليكي مطمنه معايا 🥹❤️",
+"وبجد يا روحي انا مش عايزك تزعلي من الدنيا ولا تشيلي هم كل حاجه لوحدك انتي كمان ليكي حق ترتاحي وتفرحي وتدلعي وتعيشي ايام حلوه وتضحكي من قلبك وانا نفسي اكون سبب في ده ولو حتى بحاجات بسيطه برساله حلوه بكلمه تطمنك باهتمام صغير يخليكي تحسي انك على بالي وده الحقيقه انتي على بالي كتير اوي اكتر مما تتخيلي 🌚❤️",
+"ولو هقولك وعد واحد من قلبي فهو اني هفضل احاول عشاننا وهفضل متمسك بالحب اللي بينا طول ما احنا الاتنين عايزينه وهفضل افكرك انك غاليه وانك تستاهلي الحب والحنان والاهتمام وان زعلك يهمني وفرحتك تفرحني وانتي بالنسبالي مش مجرد يوم حلو عدى في حياتي انتي حد نفسي يكون جزء من الايام اللي لسه جايه وعايز نعمل ذكريات حلوه ونضحك على حاجات تافهه ونحكي لبعض عن يومنا ونطمن على بعض ونبقى سند لبعض في الايام الصعبه قبل الحلوه يا اغلى ما عندي ❤️❣️",
+"بحبك يا لولتي بحبك وانتي بتضحكي وبحبك وانتي بتتكلمي وبحبك وانتي بتدلعي وبحبك حتى في الايام اللي بتبقي فيها مش طايقه حد ولا عايزه تتكلمي بحبك في كل حالاتك ومش مستني منك تبقي مثاليه عشان احبك انا بحبك انتي زي ما انتي بكل تفاصيلك وبكل الحاجات اللي بتميزك عن اي حد تاني في الدنيا وبالنسبالي مهما قابلت ناس ومهما شوفت حاجات حلوه هيفضل ليكي مكانك الخاص في قلبي اللي محدش شبهه فيه يا روح قلبي 😍❤️🫠",
+"وفي اخر الكلام كله عايزك تفتكري انك حبيبتي ولولتي وحتة من قلبي وانك اغلى من انك تزعلي لوحدك او تحسي انك مش مهمه عندي وعايزك كل ما تقري الرساله دي تبتسمي وتعرفي ان فيه حد بيحبك بجد وبيتمنى يشوفك مبسوطه وبيفكر فيكي وبيخاف على زعلك ونفسه يكون معاكي في الحلو والوحش وانتي بالنسبالي مش مجرد كلمه بحبك انتي حكاية نفسي اكملها معاكي يوم ورا يوم وتفصيله ورا تفصيله وربنا يديم الضحكه على وشك ويريح قلبك ويبعد عنك كل حاجه توجعك ويخليني دايما اقدر افرحك واطمنك واكون الشخص اللي قلبك يرتاحله يا لولتي يا حبيبتي يا كل حاجه حلوه في حياتي بحبك اوي اوي اوي ومهما قلت مش هكفيكي حقك يا روح قلبي 😍❤️🥹❣️🫠🌚💋"
+];
+
+const POEMS = [
+ {l:["الحب مش كلمة بتتقال في غياب","ولا شوق بيظهر في لحظة عتاب","الحب قلب يختار قلبه كل يوم","ويفضل معاه مهما يطول الغياب"],e:"❤️"},
+ {l:["الحب إنك تلاقي روحك في عيون","وتحس إنك في قربها ملكت الكون","وإن كان للعمر ألف حكاية","تبقى هي أجمل حكاية في العيون"],e:"🥹❤️"},
+ {l:["يا ليت قلبي يقدر يوصف شعوره","كان كتب اسمك نجمة في نوره","وكان حكى للّيل عن أجمل غرام","وعن قلب لقى في الحب كل سروره"],e:"😍❣️"},
+ {l:["وفي زحمة الدنيا ووسط الزحام","في قلب بيحبك من غير كلام","يشوفك أمانه وراحته وسكينته","ويختارك كل يوم مهما طال الخصام"],e:"❤️"},
+ {l:["ما هو الحب مش وعد بألف سنة","ولا كلمة حلوة تتقال في الهنا","الحب إنك وقت الوجع تلاقي","قلب يضمك ويهون عليك المحنة"],e:"🥹"},
+ {l:["ولو يوم فرقتنا ظروف الحياة","هتفضل صورتك محفورة في الذكريات","أصل القلوب اللي بتحب بصدق","بتسيب أثر متمحيهوش السنين مهما فات"],e:"❤️‍🩹"},
+ {l:["وإن كان للعمر آخر ونهاية","وإن كان لكل حلم يوم حكاية","يكفيني إني عشت يوم وأنا بحب","وعرفت إن الحب أجمل عطايا الحياة"],e:"❤️😍"}
+];
+
+/* ================= HELPERS ================= */
+const $ = id => document.getElementById(id);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+function show(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  $(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+/* sparkles on page 1 */
+for(let i=0;i<40;i++){
+  const s=document.createElement('i');s.className='sparkle';
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*3+'s';s.style.animationDuration=2+Math.random()*3+'s';
+  $('p1').appendChild(s);
+}
+
+/* ================= MECHANICAL TRANSITION ================= */
+const sh = $('shutter');
+for(let i=0;i<8;i++){
+  const s=document.createElement('div');s.className='slat';
+  s.style.right=(i*12.5)+'%';
+  s.style.transitionDelay=(i*70)+'ms';
+  $('slats').appendChild(s);
+}
+async function typeMsg(txt){
+  const el=$('shutterMsg');el.textContent='';
+  for(const ch of txt){el.textContent+=ch;await sleep(75);}
+}
+async function mechanical(next, msg){
+  sh.className='show';
+  void sh.offsetWidth;
+  sh.classList.add('closed');
+  await sleep(1000);               // slats clank shut
+  if(msg){ await typeMsg(msg); await sleep(1500); }
+  else { await sleep(900); }
+  show(next);
+  if(next==='p3') startLetter();
+  if(next==='p4') startPoems();
+  sh.classList.add('opening');
+  // reverse stagger on opening
+  await sleep(1100);
+  sh.className='';
+  $('shutterMsg').textContent='';
+}
+
+/* ================= HEARTS ================= */
+let heartTimer=null;
+const HEART_SET=['❤️','💖','💗','💕','🌹','💘'];
+function dropHeart(){
+  const h=document.createElement('div');h.className='heart';
+  h.textContent=HEART_SET[Math.floor(Math.random()*HEART_SET.length)];
+  const size=14+Math.random()*26;
+  h.style.fontSize=size+'px';
+  h.style.left=Math.random()*100+'vw';
+  h.style.setProperty('--dx',(Math.random()*120-60)+'px');
+  h.style.setProperty('--rot',(Math.random()*160-80)+'deg');
+  h.style.animationDuration=(5+Math.random()*5)+'s';
+  $('hearts').appendChild(h);
+  setTimeout(()=>h.remove(),11000);
+}
+function startHearts(rate=320){ stopHearts(); heartTimer=setInterval(dropHeart,rate); for(let i=0;i<10;i++)setTimeout(dropHeart,i*120); }
+function stopHearts(){ clearInterval(heartTimer); heartTimer=null; }
+
+/* ================= LETTER ================= */
+let letterWords=[], letterDone=false, skipFlag=false;
+function buildLetter(){
+  const box=$('letter');box.innerHTML='';letterWords=[];
+  LETTER.forEach(item=>{
+    const p=document.createElement('p');
+    if(typeof item==='string'){
+      item.split(' ').forEach(w=>{
+        const s=document.createElement('span');s.className='w';s.textContent=w+' ';p.appendChild(s);letterWords.push(s);
+      });
+    } else {
+      p.className='poem';
+      item.poem.forEach(line=>{
+        const d=document.createElement('span');d.className='ln';
+        line.split(' ').forEach(w=>{
+          const s=document.createElement('span');s.className='w';s.textContent=w+' ';d.appendChild(s);letterWords.push(s);
+        });
+        p.appendChild(d);
+      });
+    }
+    box.appendChild(p);
+  });
+}
+async function startLetter(){
+  letterDone=false;skipFlag=false;
+  $('bottom1').classList.remove('show');
+  buildLetter();
+  startHearts(300);
+  await sleep(600);
+  for(const w of letterWords){
+    if(skipFlag)break;
+    w.classList.add('on');
+    const r=w.getBoundingClientRect();
+    if(r.bottom>innerHeight*0.72){window.scrollBy({top:r.bottom-innerHeight*0.55,behavior:'smooth'});}
+    await sleep(/[❤️😍🥹💋🫠❣️🌚]/u.test(w.textContent)?260:85);
+  }
+  finishLetter();
+}
+function finishLetter(){
+  if(letterDone)return;letterDone=true;
+  letterWords.forEach(w=>w.classList.add('on'));
+  $('skip').style.display='none';
+  setTimeout(()=>{
+    $('bottom1').classList.add('show');
+    $('bottom1').scrollIntoView({behavior:'smooth',block:'center'});
+  },700);
+}
+$('skip').onclick=()=>{skipFlag=true;finishLetter();};
+
+/* ================= POEMS ================= */
+function startPoems(){
+  stopHearts();
+  const wrap=$('poems');wrap.innerHTML='';
+  POEMS.forEach(p=>{
+    const c=document.createElement('div');c.className='poem-card';
+    p.l.forEach(t=>{const d=document.createElement('div');d.className='ln';d.textContent=t;c.appendChild(d);});
+    const e=document.createElement('div');e.className='em';e.textContent=p.e;c.appendChild(e);
+    wrap.appendChild(c);
+  });
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.2});
+  document.querySelectorAll('.poem-card').forEach(c=>io.observe(c));
+  startHearts(1100);
+}
+
+/* ================= FLOW ================= */
+$('go1').onclick=()=>mechanical('p3','والله بحبك بس اتقل عليا');
+$('go2').onclick=()=>mechanical('p4','');
+</script>
+</body>
+</html>
